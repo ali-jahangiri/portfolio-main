@@ -23,7 +23,7 @@ const ITEMS = [
 ]
 
 const Navbar = () => {
-    const [currentPathHash, setCurrentPathHash] = useState(() => window.location.hash.slice(1))
+    const [currentPathHash, setCurrentPathHash] = useState(() => typeof window !== "undefined" ? window.location.hash.slice(1) : "")
 
     return (
         <nav className='w-full h-20 fixed top-0 left-0 z-50 backdrop-blur-xs bg-linear-to-b from-white to-transparent'>

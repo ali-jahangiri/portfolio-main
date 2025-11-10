@@ -3,6 +3,7 @@
 
 body {
   --font-outfit: var(--font-outfit);
+  overflow-x: hidden;
 }
 
 html {
@@ -14,3 +15,12 @@ html {
   --color-secondary: #D9D9D9;
   --entire-screen: calc(100vh - 100px);
 }
+
+
+#circularEffect {
+  z-index: 9;
+  background: #ffe7;
+}
+
+/* background: linear-gradient(180deg, #780CFF #780cff94, transparent); */
+/* background: linear-gradient(180deg, #ffe733, #780cff94, transparent); */
