@@ -19,9 +19,12 @@ const HeroSection = () => {
                         </div>
                     }>A</HoverBox>
                     <HoverBox badge={
-                        <Image className="drop-shadow-[0px_0px_30px_#000 rotate-90" src="/objects/keyboard.png" width={400} height={400} alt="keyboard" />
+                        <div>
+                            <Image className="drop-shadow-[0px_0px_30px_#000 rotate-100 scale-200" src="/objects/keyboard-full.png" width={200} height={200} alt="keyboard" />
+                            <Image className="drop-shadow-[0px_0px_30px_#000 absolute top-10 z-10 -left-10 -rotate-30" src="/objects/mouse.webp" width={200} height={200} alt="mouse" />
+                        </div>
                     }>l</HoverBox>
-                    <HoverBox badge={<Image className="drop-shadow-[0px_0px_30px_#000]" src="/objects/i-letter.png" width={200} height={200} alt="i-letter" />}
+                    <HoverBox badge={<Image className="drop-shadow-[0px_0px_30px_#000] scale-150" src="/objects/i-letter.png" width={200} height={200} alt="i-letter" />}
                     >i</HoverBox>
                 </p>
                 <p className="flex md:ml-10 ml-0">
@@ -55,7 +58,7 @@ interface Props {
 }
 
 const HoverBox = ({ children, badge }: Props) => {
-    const animationClassNames = "transition duration-100 delay-75 group-hover:translate-y-0 group-hover:scale-105 group-hover:opacity-100"
+    const animationClassNames = "transition ease-in-out duration-100 delay-75 group-hover:translate-y-0 group-hover:scale-105 group-hover:opacity-100"
     return <div className="flex items-center justify-center h-[340px] cursor-pointer relative group">
         <div className="max-h-full flex items-center justify-center overflow-hidden">
             {children}
