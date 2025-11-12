@@ -1,0 +1,47 @@
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import readingTime from 'reading-time'
+import { BlogPost } from '@/types/blog.type'
+
+
+
+const postsDirectory = path.join(process.cwd(), 'src/content/posts')
+
+console.log(postsDirectory);
+
+
+export function getAllPosts(): BlogPost[] {
+    const files = fs.readdirSync(postsDirectory);
+
+    const posts = files.map((filename) => {
+        const filePath = path.join(postsDirectory, filename)
+        const fileContent = fs.readFileSync(filePath, 'utf-8')
+        const { data, content } = matter(fileContent)
+        const slug = filename.replace(/\.mdx?$/, '')
+
+        return {
+            slug,
+            ...data,
+            readingTime: readingTime(content).text
+        }
+    })
+
+    // sort by date descending
+    return posts.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
+}
+
+export function getPostBySlug(slug: string) {
+    const filePath = path.join(postsDirectory, `${slug}.mdx`)
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const { data, content } = matter(fileContent)
+
+    return {
+        slug,
+        ...data,
+        content,
+        readingTime: readingTime(content).text
+    }
+}

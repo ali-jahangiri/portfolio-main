@@ -1,11 +1,14 @@
-import React from 'react'
+import { ReactNode } from 'react'
 
-const Container = () => {
-    return (
-        <div>
-
-        </div>
-    )
+interface Props {
+    children: ReactNode;
+    className?: string
 }
+
+const Container = (props: Props) => (
+    <div className={`mx-auto w-[98%] ${props.className || ""}`}>
+        {props.children}
+    </div>
+)
 
 export default Container

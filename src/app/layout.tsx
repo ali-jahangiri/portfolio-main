@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Outfit } from "next/font/google";
+import Navbar from "@/components/features/navbar";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -21,11 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`
-          ${outfit.className}
-           antialiased`}>
+    <html dir="ltr" lang="en">
+      <body className={`${outfit.className} antialiased`}>
         {children}
+        <Navbar />
       </body>
     </html>
   );
