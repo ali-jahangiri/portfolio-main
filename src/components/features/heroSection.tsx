@@ -2,7 +2,7 @@ import Image from 'next/image';
 import HoverBox from './hoverBox';
 
 const HeroSection = () => (
-  <div className="w-full h-screen flex flex-col justify-end items-start p-3 relative">
+  <div id="hero" className="w-full h-screen flex flex-col justify-end items-start p-3 relative">
     <div
       id="circularEffect"
       className="absolute left-1/2 -top-[700px] -translate-x-1/2 pointer-events-none h-[77vw] w-[90vw] rounded-full blur-3xl"
@@ -12,7 +12,7 @@ const HeroSection = () => (
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>
     <h1 className="flex flex-nowrap leading-none font-bold w-full text-[clamp(8rem,20vw,26rem)] tracking-wide whitespace-nowrap min-w-0">
-      <p className="flex">
+      <div className="flex">
         <HoverBox
           badge={
             <div className="flex relative w-full h-full">
@@ -70,8 +70,8 @@ const HeroSection = () => (
         >
           i
         </HoverBox>
-      </p>
-      <p className="flex md:ml-10 ml-0">
+      </div>
+      <div className="flex md:ml-10 ml-0">
         <HoverBox
           badge={
             <div>
@@ -159,7 +159,7 @@ const HeroSection = () => (
         >
           n
         </HoverBox>
-      </p>
+      </div>
     </h1>
   </div>
 );

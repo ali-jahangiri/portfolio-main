@@ -3,6 +3,7 @@ import Container from '@/components/ui/container';
 import BlogCard from '@/components/features/blogCard';
 import Footer from '@/components/features/footer';
 import { getAllPosts } from '@/lib/blog-utils';
+import ScrollToTop from '@/components/features/scrollToTop';
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -11,6 +12,7 @@ export default function BlogPage() {
     <PageContentContainer>
       <h1 className="text-8xl">Blog</h1>
 
+      <ScrollToTop />
       <Container>
         {/* Main Blog Sections */}
         <div className="w-full h-120 group rounded-2xl overflow-hidden bg-gray-100 cursor-pointer flex items-center mt-10">
@@ -40,7 +42,9 @@ export default function BlogPage() {
                   <path d="M21.5,0H9V3h9.879L.026,21.853l2.121,2.121L21,5.121V15h3V2.5c0-1.378-1.121-2.5-2.5-2.5Z" />
                 </svg>
               </div>
-              <span className="text-neutral-800 ml-2 font-semibold">Read Full article!</span>
+              <span className="text-neutral-800 ml-2 font-semibold group-hover:ml-5 transition-all">
+                Read Full article!
+              </span>
             </div>
           </div>
         </div>
@@ -53,7 +57,7 @@ export default function BlogPage() {
               date={post.date}
               slug={post.slug}
               readingTime={post.readingTime}
-              categories={['Devops', 'Develop']}
+              categories={post.tags}
               thumbImgSrc="/objects/i-letter.png"
               key={i}
             />

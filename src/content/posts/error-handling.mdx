@@ -1,21 +1,16 @@
 ---
 title: 'Enterprise-Grade Error Handling in Frontend Applications'
-description: 'This is my first blog post using Next.js 15 and MDX'
+description: '
+“Good engineers write code that works. Great engineers design systems that fail gracefully.”
+
+In the frontend world, failure is not an edge case — it’s a constant. Network hiccups, expired sessions, misconfigured APIs, or third-party SDK issues can all disrupt the user experience.
+
+This article dives deep into how to **treat errors as first-class citizens** in your architecture — exploring strategies to classify, observe, and recover from failures without losing user trust.'
 date: '2024-01-15'
 publishedAt: '2024-01-15'
 tags: ['nextjs', 'tutorial', 'webdev']
 thumbnail: '/images/blog/first-post.jpg'
 ---
-
-# Error
-
-#
-
-“Good engineers write code that works. Great engineers design systems that fail gracefully.”
-
-In the frontend world, failure is not an edge case — it’s a constant. Network hiccups, expired sessions, misconfigured APIs, or third-party SDK issues can all disrupt the user experience.
-
-This article dives deep into how to **treat errors as first-class citizens** in your architecture — exploring strategies to classify, observe, and recover from failures without losing user trust.
 
 ## Error classification and why it matters
 
@@ -96,9 +91,9 @@ try {
 }
 ```
 
-### How to do Centralization on our Error handling ?
+Centralizing error handling involves three main approaches:
 
-### **I**. Single API fetcher
+#### I. Single API fetcher
 
 Wrap `fetch`/`axios` to standardize response parsing and error normalization.
 
@@ -127,7 +122,7 @@ export async function fetcher(input: string, init?: RequestInit) {
 
 Use this in UI code consistently (React Query, SWR, custom hooks).
 
-### **II.** Global error boundary + local boundaries
+#### II. Global error boundary + local boundaries
 
 - **Global Error Boundary**: catches anything uncaught and shows a global fallback or reload option.
 - **Local Error Boundaries**: wrap riskier parts (rich editors, charts) to avoid entire app crash.
@@ -144,7 +139,7 @@ Example:
 </GlobalErrorBoundary>
 ```
 
-### **III**. Centralized toast / notification manager
+#### III. Centralized toast / notification manager
 
 All user-facing transient messages go through one service:
 
@@ -154,11 +149,11 @@ toastService.show({ type: 'error', title: 'Could not save', action: { label: 'Re
 
 This enforces consistent language and placement.
 
-### 3. **Design User-Friendly Error Experiences**
+### 3. Design User-Friendly Error Experiences
 
 **Principle:** Error messages should be **actionable**, **polite**, and **non-technical**, with appropriate UX patterns for different error types.
 
-### **Message Guidelines**
+#### Message Guidelines
 
 **✅ Dos**
 
@@ -172,7 +167,7 @@ This enforces consistent language and placement.
 - Avoid generic messages like "Something went wrong"
 - Don't expose stack traces, internal IDs, or secrets
 
-### **Practical UX Patterns**
+#### Practical UX Patterns
 
 **1. Inline Validation & Form Errors**
 
@@ -190,10 +185,11 @@ This enforces consistent language and placement.
 
 **3. Fallback Pages for Critical Failures**
 
-- For app-level crashes, show a full-page fallback with:
-  - Clear explanation: "Something went wrong"
-  - Primary CTA: "Reload" button
-  - Secondary options: "Try in Incognito", "Report issue" link
+For app-level crashes, show a full-page fallback with:
+
+- Clear explanation: "Something went wrong"
+- Primary CTA: "Reload" button
+- Secondary options: "Try in Incognito", "Report issue" link
 
 **4. Message Templates by Error Type**
 
@@ -212,11 +208,11 @@ This enforces consistent language and placement.
 
 This approach ensures users get the right level of information and actionable steps for every error scenario.
 
-### Example error message mapping (practical table)
+#### Example error message mapping (practical table)
 
 ![image.png](image%201.png)
 
-### Documentation & Error Dictionary
+#### Documentation & Error Dictionary
 
 Maintain a **shared “Error Dictionary”** across teams:
 
@@ -258,7 +254,8 @@ This allows non-technical teams (support, QA) to understand issues quickly.
 
 **What to capture**
 
-- Error message and stack trace**Error rate (%)**: errors per 1k requests or per user session.
+- Error message and stack trace
+- **Error rate (%)**: errors per 1k requests or per user session.
 - **Crash-free sessions**: % sessions without runtime exceptions.
 - **Time-to-recover**: median time from error spike to fix/deploy.
 - **Top error types**: grouped by message/code.
@@ -285,7 +282,7 @@ This allows non-technical teams (support, QA) to understand issues quickly.
 }
 ```
 
-### Observability Stack Integration
+#### Observability Stack Integration
 
 Connect your frontend to enterprise observability tools:
 
@@ -372,7 +369,7 @@ Different products (admin panel, mobile web, B2B dashboard) can have distinct ru
 }
 ```
 
-### 10. Avoid performance impact of heavy logging
+### 11. Avoid performance impact of heavy logging
 
 - Batch client logs instead of sending one request per error.
 - Rate-limit error reporting (e.g., one per 10 seconds per user).
@@ -387,7 +384,7 @@ function scheduleReport(error) {
 }
 ```
 
-### 11. Graceful degradation at scale
+### 12. Graceful degradation at scale
 
 - Feature flag a problematic module (e.g., disable a third-party chat widget if it fails repeatedly).
 - Use remote config to adjust error thresholds without redeploy.

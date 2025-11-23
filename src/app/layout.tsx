@@ -1,18 +1,17 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
-import { Outfit } from "next/font/google";
-import Navbar from "@/components/features/navbar";
+import { Outfit } from 'next/font/google';
+import Navbar from '@/components/features/navbar';
 
 const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["100", "200", "500", "600", "700", "800"],
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  weight: ['100', '200', '500', '600', '700', '800'],
 });
 
-
 export const metadata: Metadata = {
-  title: "Jahangiri.dev",
+  title: 'Jahangiri.dev',
   description: "Ali Jahangiri's portfolio",
 };
 

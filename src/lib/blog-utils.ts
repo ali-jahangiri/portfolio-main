@@ -8,8 +8,6 @@ import { BlogPost } from '@/types/blog.type'
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts')
 
-console.log(postsDirectory);
-
 
 export function getAllPosts(): BlogPost[] {
     const files = fs.readdirSync(postsDirectory);
@@ -23,25 +21,29 @@ export function getAllPosts(): BlogPost[] {
         return {
             slug,
             ...data,
+            content: '', // Not needed for list view
             readingTime: readingTime(content).text
-        }
+        } as BlogPost
     })
 
-    // sort by date descending
     return posts.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     )
 }
 
-export function getPostBySlug(slug: string) {
-    const filePath = path.join(postsDirectory, `${slug}.mdx`)
-    const fileContent = fs.readFileSync(filePath, 'utf-8')
-    const { data, content } = matter(fileContent)
+export function getPostBySlug(slug: string): BlogPost | null {
+    try {
+        const filePath = path.join(postsDirectory, `${slug}.mdx`)
+        const fileContent = fs.readFileSync(filePath, 'utf-8')
+        const { data, content } = matter(fileContent)
 
-    return {
-        slug,
-        ...data,
-        content,
-        readingTime: readingTime(content).text
+        return {
+            slug,
+            ...data,
+            content,
+            readingTime: readingTime(content).text
+        } as BlogPost
+    } catch {
+        return null
     }
 }
