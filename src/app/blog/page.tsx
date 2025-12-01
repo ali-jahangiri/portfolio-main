@@ -53,7 +53,6 @@ export default function BlogPage() {
           {posts.map((post, i) => (
             <BlogCard
               title={post.title}
-              desc={post.description}
               date={post.date}
               slug={post.slug}
               readingTime={post.readingTime}

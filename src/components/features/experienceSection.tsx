@@ -9,7 +9,11 @@ const ExperienceSection = () => {
         <div>
           <p className="text-8xl sticky top-24 left-0">
             Shaping Digital Experiences
-            <RedirectAction href="/experience" title="Watch All" className="ml-5" />
+            <RedirectAction
+              href="https://www.linkedin.com/in/jahangiridev/details/experience/"
+              title="Watch All"
+              className="ml-5"
+            />
           </p>
         </div>
         <div className="w-full rounded-2xl bg-gray-100 m-5">
@@ -20,6 +24,11 @@ const ExperienceSection = () => {
           </p>
 
           <div className="m-10">
+            <ExperienceRecord
+              title="Tamin"
+              imgSrc="/compony/tamin.png"
+              desc="As a Front-End Chapter Lead, I drive engineering standards, architecture governance, and cross-squad consistency. I design and maintain core enterprise systems—including SSO/OAuth2 authentication, dynamic RBAC/ABAC authorization, payment infrastructure, and multi-project modernization into a single Next.js 15 codebase. I establish coding conventions, performance and accessibility guidelines, front-end security practices, and scalable directory/resource strategies. I collaborate tightly with backend teams on API schema design, lead code reviews and paired refactoring, mentor engineers, and build shared tooling, documentation, and decision records to ensure a reliable and future-proof front-end ecosystem."
+            />
             <ExperienceRecord
               title="Fanap"
               imgSrc="/compony/fanap-soft.png"
@@ -42,8 +51,8 @@ const ExperienceSection = () => {
             />
             <ExperienceRecord
               title="DataCoLab & Straiberry AI"
-              secondImgSrc="/compony/straiberry.jpg"
-              imgSrc="/compony/datacolab.jpg"
+              secondImgSrc="/compony/Logo-DCL-1.png"
+              imgSrc="/compony/straiberry.jpg"
               desc="Engineered a comprehensive dental clinic dashboard with sophisticated access control for 20+ international clinics. Developed a robust internal design system with 40+ TypeScript components and design tokens, while also mentoring junior developers and implementing multilingual support to expand global reach."
             />
             <ExperienceRecord
@@ -69,20 +78,20 @@ const ExperienceRecord = ({
   secondImgSrc?: string;
   desc: string;
 }) => (
-  <div className="flex items-start mt-40 relative">
+  <div className="flex items-start mt-20 relative">
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-30 ${
+      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${
         secondImgSrc ? 'relative -top-10' : ''
       }`}
     >
-      <Image width={100} height={100} src={imgSrc} alt="compony-logo" />
+      <Image width={50} height={50} src={imgSrc} alt="compony-logo" />
     </div>
     {secondImgSrc && (
-      <div className="flex absolute top-10 left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-30">
+      <div className="flex absolute top-5 left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22">
         <Image width={100} height={100} src={secondImgSrc} alt="compony-logo" />
       </div>
     )}
-    <div className="ml-10 mt-12">
+    <div className="ml-9 mt-12">
       <p className="text-2xl font-semibold mb-4">{title}</p>
       <p className="text-neutral-700">{desc}</p>
     </div>

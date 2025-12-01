@@ -22,7 +22,7 @@ export function getAllPosts(): BlogPost[] {
             slug,
             ...data,
             content: '', // Not needed for list view
-            readingTime: readingTime(content).text
+            readingTime: readingTime(content).text,
         } as BlogPost
     })
 

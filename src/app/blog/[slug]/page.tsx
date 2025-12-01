@@ -11,7 +11,6 @@ import { extractHeadings } from '@/lib/toc-utils';
 import Badge from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
 import MarkdownParser from '@/components/features/markdownParser';
-import ScrollToTop from '@/components/features/scrollToTop';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -41,7 +40,7 @@ export async function generateMetadata({ params }: Props) {
       title: post.title,
       description: post.description,
       type: 'article',
-      publishedTime: post.publishedAt,
+      publishedTime: post.date,
       ...(post.updatedAt && { modifiedTime: post.updatedAt }),
       tags: post.tags,
     },
@@ -61,7 +60,6 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <PageContentContainer>
       <Container>
-        <ScrollToTop />
         {/* Back Button */}
         <Link
           href="/blog"

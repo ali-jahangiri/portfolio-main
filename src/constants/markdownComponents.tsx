@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import CopyCodeButton from '@/components/features/copyCodeButton';
 import { pitchBlack } from '@/lib/themes/pitchBlack';
 import { generateHeadingId } from '@/lib/utils';
-import Image from 'next/image';
+import ImageLightbox from '@/components/features/imageLightbox';
 
 const markdownComponents: Components = {
   code({ className, children, ...props }) {
@@ -45,9 +45,7 @@ const markdownComponents: Components = {
   },
   blockquote({ children }) {
     return (
-      <blockquote className="border-l-4 border-primary/30 pl-6 py-2 my-6 italic text-neutral-700 bg-neutral-50 rounded-r-lg">
-        {children}
-      </blockquote>
+      <blockquote className="border-l-4 border-neutral-300 pl-6 pb-1 pt-7 my-8 text-neutral-700">{children}</blockquote>
     );
   },
   pre({ children }) {
@@ -138,7 +136,7 @@ const markdownComponents: Components = {
     return <em className="italic text-neutral-800">{children}</em>;
   },
   hr() {
-    return <hr className="my-8 border-neutral-200" />;
+    return <hr className="my-20 w-1/3 mx-auto border-neutral-200" />;
   },
   table({ children }) {
     return (
@@ -178,22 +176,7 @@ const markdownComponents: Components = {
       }
     }
 
-    return (
-      <div className="my-8 flex justify-center">
-        <div className="relative w-full max-w-4xl rounded-lg border border-neutral-200 bg-neutral-50">
-          <Image
-            src={imageSrc}
-            alt={alt || ''}
-            width={1200}
-            height={675}
-            className="w-full h-auto object-contain"
-            style={{ width: '100%', height: 'auto' }}
-            unoptimized
-            {...props}
-          />
-        </div>
-      </div>
-    );
+    return <ImageLightbox src={imageSrc} alt={alt || ''} {...props} />;
   },
 };
 
