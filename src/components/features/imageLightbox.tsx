@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-// Lazy load Lightbox component
-const Lightbox = lazy(() => import('yet-another-react-lightbox'));
+import "yet-another-react-lightbox/styles.css";
+import Lightbox from 'yet-another-react-lightbox';
 
 interface Props {
   src: string;
@@ -17,23 +18,6 @@ interface Props {
 
 export default function ImageLightbox({ src, alt = '', ...props }: Props) {
   const [open, setOpen] = useState(false);
-  const [zoomPlugin, setZoomPlugin] = useState<unknown>(null);
-  const [cssLoaded, setCssLoaded] = useState(false);
-
-  // Lazy load Zoom plugin and CSS when lightbox opens
-  useEffect(() => {
-    if (open) {
-      // Load CSS
-      import('yet-another-react-lightbox/styles.css').then(() => {
-        setCssLoaded(true);
-      });
-
-      // Load Zoom plugin
-      import('yet-another-react-lightbox/plugins/zoom').then((module) => {
-        setZoomPlugin(module.default);
-      });
-    }
-  }, [open]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -82,27 +66,29 @@ export default function ImageLightbox({ src, alt = '', ...props }: Props) {
         </div>
       </div>
 
-      {open && cssLoaded && zoomPlugin && (
-        <Suspense fallback={null}>
-          <Lightbox
-            open={open}
-            close={handleClose}
-            slides={[{ src, alt }]}
-            plugins={[zoomPlugin as (props: unknown) => void]}
-            zoom={{
-              maxZoomPixelRatio: 3,
-              zoomInMultiplier: 2,
-              doubleTapDelay: 300,
-              doubleClickDelay: 300,
-              doubleClickMaxStops: 2,
-              keyboardMoveDistance: 50,
-              wheelZoomDistanceFactor: 10,
-              pinchZoomDistanceFactor: 100,
-              scrollToZoom: true,
-            }}
-          />
-        </Suspense>
-      )}
+
+      <Lightbox
+        open={open}
+        close={handleClose}
+        slides={[{ src, alt }]}
+        plugins={[Zoom]}
+        controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          keyboardMoveDistance: 50,
+          wheelZoomDistanceFactor: 10,
+          pinchZoomDistanceFactor: 10,
+          scrollToZoom: true,
+        }}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
+      />
     </>
   );
 }

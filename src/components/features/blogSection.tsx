@@ -19,7 +19,6 @@ const BlogSection = () => {
               <div className="flex-1" key={i}>
                 <BlogCard
                   title={post.title}
-                  desc={post.description}
                   date={post.date}
                   slug={post.slug}
                   readingTime={post.readingTime}
@@ -35,7 +34,6 @@ const BlogSection = () => {
           {posts.slice(-1).map((post, i) => (
             <BlogCard
               title={post.title}
-              desc={post.description}
               date={post.date}
               slug={post.slug}
               readingTime={post.readingTime}
