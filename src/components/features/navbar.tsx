@@ -37,22 +37,25 @@ const Navbar = () => {
     } else return `/#${path}`;
   }
 
+  function checkCurrentActiveLink(itemPath: string) {
+    if (currentPathHash === itemPath && currentPath.length <= 1) return true;
+    else if (currentPath.slice(1).startsWith(itemPath)) return true;
+    else return false
+  }
+
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-999999 backdrop-blur-xs bg-linear-to-b from-white to-transparent transition-all duration-300 ease-in-out ${
-        isHomePage ? 'h-20' : 'h-14'
-      }`}
+      className={`w-full fixed top-0 left-0 z-999999 backdrop-blur-xs bg-linear-to-b from-white to-transparent transition-all duration-300 ease-in-out ${isHomePage ? 'h-20' : 'h-14'
+        }`}
     >
       <div
-        className={`w-fit flex items-center gap-x-6 bg-[#000000bf] rounded-full transition-all duration-300 ease-in-out ${
-          isHomePage ? 'p-3 mt-5 ml-5 px-5' : 'p-2 mt-3 ml-3 px-4'
-        }`}
+        className={`w-fit flex items-center gap-x-6 bg-[#000000bf] rounded-full transition-all duration-300 ease-in-out ${isHomePage ? 'p-3 mt-5 ml-5 px-5' : 'p-2 mt-3 ml-3 px-4'
+          }`}
       >
         <Link href="/">
           <svg
-            className={`fill-neutral-200 transition-all duration-300 ease-in-out hover:fill-primary ${
-              isHomePage ? 'size-7' : 'size-5'
-            }`}
+            className={`fill-neutral-200 transition-all duration-300 ease-in-out hover:fill-primary ${isHomePage ? 'size-7' : 'size-5'
+              }`}
             xmlns="http://www.w3.org/2000/svg"
             id="Filled"
             viewBox="0 0 24 24"
@@ -65,15 +68,13 @@ const Navbar = () => {
         {ITEMS.map((item, i) => (
           <Link href={generateHrefForLink(item.path)} onClick={() => setCurrentPathHash(item.path)} key={i}>
             <span
-              className={`transition-all duration-300 ease-in-out hover:text-white ${
-                isHomePage ? 'text-base' : 'text-sm'
-              } ${
-                currentPathHash
-                  ? currentPathHash === item.path
+              className={`transition-all duration-300 ease-in-out hover:text-white ${isHomePage ? 'text-base' : 'text-sm'
+                } ${currentPathHash || currentPath.length > 1
+                  ? checkCurrentActiveLink(item.path)
                     ? 'text-white'
                     : 'text-neutral-400'
                   : 'text-neutral-100'
-              }`}
+                }`}
             >
               {item.title}
             </span>

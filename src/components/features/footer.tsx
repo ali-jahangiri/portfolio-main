@@ -9,9 +9,9 @@ const Footer = () => (
     </div>
 
     <div className="flex gap-x-3 items-center">
-      <a href="https://www.instagram.com/ajadvgo" target="_blank">
+      {/* <a href="https://www.instagram.com/ajadvgo" target="_blank">
         <Image width={60} height={60} src="/insta.png" alt="Instagram" />
-      </a>
+      </a> */}
       <a href="https://www.linkedin.com/in/jahangiridev/" target="_blank">
         <Image width={60} height={60} src="/linkedin.png" alt="LinkedIn" />
       </a>
