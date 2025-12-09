@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Footer from './footer';
 
 const ConnectSection = () => {
@@ -6,6 +7,16 @@ const ConnectSection = () => {
       {/* PRIMARY CTA SECTION */}
       <div className="flex items-center justify-center rounded-xl max-w-1/2 h-[50vh] mb-auto mt-auto">
         <div className="m-10">
+          <div className="flex items-center relative">
+            <h3 className="text-4xl font-black mb-2">Slide Into My Inbox</h3>
+            <Image
+              className="absolute -top-35 -left-40 -rotate-35"
+              src="/objects/contact-me.png"
+              width={200}
+              height={200}
+              alt="object-contact"
+            />
+          </div>
           {`"`}Let’s connect! If you’re into tech, creativity, or collaboration, I’d love to hear from you.{` "`}
         </div>
         <a href="mailto:jahangiri.dev@gmail.com">
