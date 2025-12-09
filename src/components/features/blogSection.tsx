@@ -14,7 +14,7 @@ const BlogSection = () => {
             My thoughts turned into writing
             <RedirectAction href="/blog" title="Read All" className="ml-5" />
           </span>
-          <div className="flex h-full flex-1 mt-10 gap-5  px-5">
+          {/* <div className="flex h-full flex-1 mt-10 gap-5  px-5">
             {posts.slice(0, 2).map((post, i) => (
               <div className="flex-1" key={i}>
                 <BlogCard
@@ -28,7 +28,7 @@ const BlogSection = () => {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="w-1/3 h-full pr-5">
           {/* {posts.slice(-1).map((post, i) => (

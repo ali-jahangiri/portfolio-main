@@ -9,8 +9,8 @@ const AboutMeSection = () => {
       <div id="about-me" className="h-[90px]"></div>
       <div className="h-(--entire-screen) w-full flex flex-col">
         <p className="text-8xl">Behind the Code</p>
-        <div className="flex h-full w-full">
-          <div className="w-3/5 flex flex-col items-end justify-center bg-gray-100 m-5 rounded-2xl h-full">
+        <div className="flex h-full w-full flex-col-reverse md:flex-row">
+          <div className="w-[90%] md:w-3/5 flex flex-col items-end justify-center bg-gray-100 mx-auto md:m-5 rounded-2xl h-full">
             <p className="p-10 mt-auto font-semibold text-justify text-2xl text-neutral-500">
               {
                 `I started my journey as a junior developer in Tehran back in 2020. Over the years, I’ve learned how to
@@ -22,7 +22,7 @@ const AboutMeSection = () => {
 
             </p>
           </div>
-          <div className="w-2/5 flex items-center justify-center p-10 rounded-2xl bg-gray-100 mr-5 mt-5 h-full">
+          <div className="w-[90%] md:w-2/5 flex items-center justify-center p-10 rounded-2xl bg-gray-100 md:mr-5 mx-auto mt-5 h-full">
             <PureSlider
               speed={700}
               height="100%"

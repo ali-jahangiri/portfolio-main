@@ -45,11 +45,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${isHomePage ? 'h-20' : 'h-14'
+      className={`w-full fixed flex items-center justify-center top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${isHomePage ? 'h-20' : 'h-14'
         }`}
     >
       <div
-        className={`w-fit flex items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${isHomePage ? 'p-3 mt-5 ml-5 px-5' : 'p-2 mt-3 ml-3 px-4'
+        className={`w-fit flex items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${isHomePage ? 'p-3 mt-5 px-5' : 'p-2 mt-3 px-4'
           }`}
       >
         <Link href="/">

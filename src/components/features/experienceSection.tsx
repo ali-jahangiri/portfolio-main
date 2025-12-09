@@ -5,9 +5,9 @@ const ExperienceSection = () => {
   return (
     <div className="mt-10">
       <div id="experience" className="h-[90px]"></div>
-      <div className="min-h-(--entire-screen) w-full flex overflow-visible">
+      <div className="min-h-(--entire-screen) w-full flex flex-col md:flex-row overflow-visible">
         <div>
-          <p className="text-8xl sticky top-24 left-0">
+          <p className="text-8xl md:sticky top-24 left-0">
             Shaping Digital Experiences
             <RedirectAction
               href="https://www.linkedin.com/in/jahangiridev/details/experience/"
