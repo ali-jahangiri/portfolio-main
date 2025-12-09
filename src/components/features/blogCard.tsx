@@ -18,9 +18,8 @@ const BlogCard = (props: Props) => (
     className={`group rounded-2xl bg-gray-100 p-10 h-120 flex flex-col justify-end ${props.className}`}
     href={`/blog/${props.slug}`}
   >
-    <div className="mb-auto opacity-0 transition group-hover:opacity-100 group-hover:-translate-y-2">
-      <Image src={props.thumbImgSrc} width={100} height={100} alt="blog-thumb" />
-    </div>
+    <Image className='mb-auto' src={props.thumbImgSrc} width={200} height={200} alt="blog-thumb" />
+
     <div className="flex flex-wrap gap-2 items-center gap-x-3 mb-3">
       <p className="text-neutral-400">{props.date}</p>
       <div className="shrink-0 gap-x-2 flex items-center justify-center">

@@ -80,9 +80,8 @@ const ExperienceRecord = ({
 }) => (
   <div className="flex items-start mt-20 relative">
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${
-        secondImgSrc ? 'relative -top-10' : ''
-      }`}
+      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${secondImgSrc ? 'relative -top-10' : ''
+        }`}
     >
       <Image width={50} height={50} src={imgSrc} alt="compony-logo" />
     </div>

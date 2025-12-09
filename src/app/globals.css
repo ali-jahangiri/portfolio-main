@@ -26,10 +26,10 @@ html {
 .button {
   cursor: pointer;
   border: none;
-  background: #7808d0;
   color: #fff;
   width: 100px;
   height: 100px;
+  background: #000;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -57,7 +57,8 @@ html {
   height: 40px;
   overflow: hidden;
   background: #fff;
-  color: #7808d0;
+
+  color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -70,12 +71,12 @@ html {
 }
 
 .button:hover {
-  background: #000;
   transform: scale(1.05);
+  background: #7808d0;
 }
 
 .button:hover .button__icon {
-  color: #000;
+  color: #7808d0;
 }
 
 .button:hover .button__icon:first-child {

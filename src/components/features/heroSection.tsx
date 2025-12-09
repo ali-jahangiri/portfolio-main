@@ -2,12 +2,9 @@ import Image from 'next/image';
 import HoverBox from './hoverBox';
 
 const HeroSection = () => (
-  <div id="hero" className="w-full h-screen flex flex-col justify-end items-start p-3 relative">
-    <div
-      id="circularEffect"
-      className="absolute left-1/2 -top-[700px] -translate-x-1/2 pointer-events-none h-[77vw] w-[90vw] rounded-full blur-3xl"
-    />
+  <div id="hero" className="w-full h-screen flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent">
 
+    <Image src="/animated-glob.gif" width={400} height={400} alt='hero-icon' />
     <h2 className="text-3xl text-gray-500 w-2/5">
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>
@@ -80,7 +77,7 @@ const HeroSection = () => (
                 src="/objects/j-letter.png"
                 width={200}
                 height={200}
-                alt="hat"
+                alt="i-letter"
               />
             </div>
           }
@@ -90,11 +87,11 @@ const HeroSection = () => (
         <HoverBox
           badge={
             <Image
-              className="drop-shadow-[0px_0px_30px_#000] -rotate-30"
-              src="/objects/cup.webp"
-              width={200}
-              height={200}
-              alt="hat"
+              className="drop-shadow-[0px_0px_30px_#000] -rotate-10"
+              src="/objects/Camel-logo.webp"
+              width={400}
+              height={400}
+              alt="camel"
             />
           }
         >
@@ -115,7 +112,7 @@ const HeroSection = () => (
                 src="/objects/symbol-2.png"
                 width={50}
                 height={50}
-                alt="shirt"
+                alt="symbol"
               />
             </div>
           }
@@ -130,7 +127,7 @@ const HeroSection = () => (
                 src="/objects/a-letter.png"
                 width={200}
                 height={200}
-                alt="hat"
+                alt="a-letter"
               />
             </div>
           }

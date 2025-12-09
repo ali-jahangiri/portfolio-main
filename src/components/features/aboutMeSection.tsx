@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 import PureSlider from '../ui/slider';
@@ -11,13 +11,15 @@ const AboutMeSection = () => {
         <p className="text-8xl">Behind the Code</p>
         <div className="flex h-full w-full">
           <div className="w-3/5 flex flex-col items-end justify-center bg-gray-100 m-5 rounded-2xl h-full">
-            <Image src="/objects/person.png" width={300} height={300} alt="person" className="mr-auto" />
-            <p className="p-10 mt-auto font-semibold text-justify text-3xl text-neutral-500">
-              I started my journey as a junior developer in Tehran back in 2020. Over the years, I’ve learned how to
+            <p className="p-10 mt-auto font-semibold text-justify text-2xl text-neutral-500">
+              {
+                `I started my journey as a junior developer in Tehran back in 2020. Over the years, I’ve learned how to
               develop and maintain products with teams of all sizes, from small startups to big enterprises. When I'm
               not behind a monitor, you might probably find me somewhere far away (maybe in a forest) with my loud
               little dirt-bike, exploring new stuff and places. Over the years, what I’ve learned the most is how to
-              adapt to all kinds of challenges, whether it’s heat, cold, or anything in between.
+              adapt to all kinds of challenges, whether it’s heat, cold, or anything in between.`
+              }
+
             </p>
           </div>
           <div className="w-2/5 flex items-center justify-center p-10 rounded-2xl bg-gray-100 mr-5 mt-5 h-full">

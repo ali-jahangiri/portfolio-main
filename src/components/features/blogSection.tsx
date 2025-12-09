@@ -22,16 +22,16 @@ const BlogSection = () => {
                   date={post.date}
                   slug={post.slug}
                   readingTime={post.readingTime}
-                  categories={['Devops', 'Develop']}
+                  categories={post.tags}
                   className="h-full"
-                  thumbImgSrc="/objects/i-letter.png"
+                  thumbImgSrc={post.thumbnail}
                 />
               </div>
             ))}
           </div>
         </div>
         <div className="w-1/3 h-full pr-5">
-          {posts.slice(-1).map((post, i) => (
+          {/* {posts.slice(-1).map((post, i) => (
             <BlogCard
               title={post.title}
               date={post.date}
@@ -42,7 +42,7 @@ const BlogSection = () => {
               className="h-full mt-auto"
               key={i}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

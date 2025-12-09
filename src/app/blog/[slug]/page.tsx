@@ -11,6 +11,7 @@ import { extractHeadings } from '@/lib/toc-utils';
 import Badge from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
 import MarkdownParser from '@/components/features/markdownParser';
+import Image from 'next/image';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -82,9 +83,10 @@ export default async function BlogPostPage({ params }: Props) {
         </Link>
 
         <div className="flex items-start justify-center relative">
-          <article className="flex-1 max-w-3xl px-4 mb-10 ml-auto mr-auto sm:px-6 lg:px-0 w-full">
+          <article className="flex-1 max-w-4xl px-4 mb-10 mx-auto sm:px-6 lg:px-0 w-full">
             {/* Article Header */}
             <div className="mb-10">
+              <Image className='mb-auto' src={post.thumbnail} width={200} height={200} alt="blog-thumb" />
               <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 mb-6 leading-tight">{post.title}</h1>
               <div className="flex flex-wrap items-center gap-4 text-neutral-600 mb-6 text-base">
                 <time dateTime={post.date}>{formatDate(post.date)}</time>

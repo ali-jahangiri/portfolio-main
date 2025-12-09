@@ -28,7 +28,7 @@ const PureSlider: React.FC<PureSliderProps> = ({
     const [index, setIndex] = useState<number>(infinite ? 1 : 0);
     const [enableTransition, setEnableTransition] = useState<boolean>(true);
 
-    // ✅ SAFE autoplay (no cascading setState in effects)
+
     useEffect(() => {
         if (!autoplay || count <= 1) return;
 
@@ -39,7 +39,6 @@ const PureSlider: React.FC<PureSliderProps> = ({
         return () => clearInterval(timer);
     }, [autoplay, autoplayDelay, count]);
 
-    // ✅ Handle infinite jumping via transition end, not useEffect
     const handleTransitionEnd = () => {
         if (!infinite) return;
 
@@ -54,7 +53,6 @@ const PureSlider: React.FC<PureSliderProps> = ({
         }
     };
 
-    // ✅ Re-enable transition after index correction
     useEffect(() => {
         if (!enableTransition) {
             const id = requestAnimationFrame(() => {
@@ -86,7 +84,7 @@ const PureSlider: React.FC<PureSliderProps> = ({
                 {extendedSlides.map((slide, i) => (
                     <div
                         key={i}
-                        className="flex-shrink-0 h-full flex"
+                        className="shrink-0 h-full flex"
                         style={{ width: `${slideWidth}%` }}
                     >
                         {slide}
