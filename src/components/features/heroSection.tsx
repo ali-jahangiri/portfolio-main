@@ -8,7 +8,7 @@ const HeroSection = () => (
     <h2 className="text-3xl text-gray-500 w-2/5">
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>
-    <div className='text-8xl font-bold'>
+    <div className='text-8xl font-bold md:block hidden'>
       <h1>Ali</h1>
       <h1>Jahangiri</h1>
     </div>

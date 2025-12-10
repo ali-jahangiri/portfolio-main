@@ -7,7 +7,7 @@ const ExperienceSection = () => {
       <div id="experience" className="h-[90px]"></div>
       <div className="min-h-(--entire-screen) w-full flex flex-col md:flex-row overflow-visible">
         <div>
-          <p className="text-8xl md:sticky top-24 left-0">
+          <p className="text-5xl md:text-8xl md:sticky top-24 left-0">
             Shaping Digital Experiences
             <RedirectAction
               href="https://www.linkedin.com/in/jahangiridev/details/experience/"
@@ -16,8 +16,8 @@ const ExperienceSection = () => {
             />
           </p>
         </div>
-        <div className="w-full rounded-2xl bg-gray-100 m-5">
-          <p className="text-2xl w-2/3 text-neutral-600 ml-auto p-10 text-justify italic">
+        <div className="w-full rounded-2xl bg-gray-100 mt-5 md:m-5">
+          <p className="text-2xl md:w-2/3 text-neutral-600 ml-auto p-10 text-justify italic">
             {"''"}As a front-end developer, I focus on creating seamless and accessible user experiences. I’ve
             contributed to complex projects, mentored developers, and helped teams deliver maintainable and performant
             code for long-term growth.{"''"}
@@ -78,7 +78,7 @@ const ExperienceRecord = ({
   secondImgSrc?: string;
   desc: string;
 }) => (
-  <div className="flex items-start mt-20 relative">
+  <div className="flex flex-col md:flex-row items-start mt-20 relative">
     <div
       className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${secondImgSrc ? 'relative -top-10' : ''
         }`}
@@ -90,9 +90,9 @@ const ExperienceRecord = ({
         <Image width={100} height={100} src={secondImgSrc} alt="compony-logo" />
       </div>
     )}
-    <div className="ml-9 mt-12">
+    <div className="ml-1 mt-5 md:ml-9 md:mt-12">
       <p className="text-2xl font-semibold mb-4">{title}</p>
-      <p className="text-neutral-700">{desc}</p>
+      <p className="text-neutral-700 text-justify">{desc}</p>
     </div>
   </div>
 );

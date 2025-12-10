@@ -5,7 +5,7 @@ const ConnectSection = () => {
   return (
     <footer id="connect" className="h-screen flex flex-col items-center justify-end ">
       {/* PRIMARY CTA SECTION */}
-      <div className="flex items-center justify-center rounded-xl max-w-1/2 h-[50vh] mb-auto mt-auto">
+      <div className="flex flex-col-reverse items-center justify-center rounded-xl md:max-w-1/2 h-[50vh] mb-auto mt-auto">
         <div className="m-10">
           <div className="flex items-center relative">
             <h3 className="text-4xl font-black mb-2">Slide Into My Inbox</h3>
