@@ -2,13 +2,15 @@ import Image from 'next/image';
 import HoverBox from './hoverBox';
 
 const HeroSection = () => (
-  <div id="hero" className="w-full h-screen md:h-auto flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent">
-
-    <Image src="/animated-glob.gif" width={400} height={400} alt='hero-icon' />
-    <h2 className="text-3xl text-gray-500 w-2/5">
+  <div
+    id="hero"
+    className="w-full h-screen md:h-auto flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent"
+  >
+    <Image src="/animated-glob.gif" width={400} height={400} alt="hero-icon" />
+    <h2 className="md:text-3xl text-gray-500 md:w-2/5 my-10">
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>
-    <div className='text-8xl font-bold md:block hidden'>
+    <div className="text-7xl font-bold md:hidden block">
       <h1>Ali</h1>
       <h1>Jahangiri</h1>
     </div>
