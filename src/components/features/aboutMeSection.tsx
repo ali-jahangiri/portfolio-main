@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import PureSlider from '../ui/slider';
@@ -6,23 +6,22 @@ import PureSlider from '../ui/slider';
 const AboutMeSection = () => {
   return (
     <div>
-      <div id="about-me" className="h-[90px]"></div>
-      <div className="md:h-(--entire-screen) w-full flex flex-col">
-        <p className="text-5xl md:text-8xl">Behind the Code</p>
+      <div id="about-me" className="h-[60px] sm:h-[70px] md:h-[90px]"></div>
+      <div className="md:h-(--entire-screen) w-full flex flex-col px-4 sm:px-6 md:px-0">
+        <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl leading-tight sm:leading-tight md:leading-normal">
+          Behind the Code
+        </p>
         <div className="flex h-full w-full flex-col-reverse md:flex-row">
-          <div className="w-[90%] md:w-3/5 flex flex-col items-end justify-center bg-gray-100 mx-auto mt-2 md:m-5 rounded-2xl h-full">
-            <p className="p-10 mt-auto font-semibold text-justify md:text-2xl text-neutral-500">
-              {
-                `I started my journey as a junior developer in Tehran back in 2020. Over the years, I’ve learned how to
+          <div className="w-full sm:w-[90%] md:w-3/5 flex flex-col items-end justify-center bg-gray-100 mx-auto mt-4 sm:mt-3 md:mt-2 md:m-5 rounded-2xl h-full">
+            <p className="p-6 sm:p-8 md:p-10 mt-auto font-semibold text-justify text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-neutral-600 md:text-neutral-500 leading-relaxed sm:leading-relaxed">
+              {`I started my journey as a junior developer in Tehran back in 2020. Over the years, I’ve learned how to
               develop and maintain products with teams of all sizes, from small startups to big enterprises. When I'm
               not behind a monitor, you might probably find me somewhere far away (maybe in a forest) with my loud
               little dirt-bike, exploring new stuff and places. Over the years, what I’ve learned the most is how to
-              adapt to all kinds of challenges, whether it’s heat, cold, or anything in between.`
-              }
-
+              adapt to all kinds of challenges, whether it’s heat, cold, or anything in between.`}
             </p>
           </div>
-          <div className="w-[90%] md:w-2/5 flex items-center justify-center md:p-10 rounded-2xl bg-gray-100 md:mr-5 mx-auto mt-5 h-full">
+          <div className="w-full sm:w-[90%] md:w-2/5 flex items-center justify-center p-4 sm:p-6 md:p-10 rounded-2xl bg-gray-100 md:mr-5 mx-auto mt-4 sm:mt-5 h-full">
             <PureSlider
               speed={700}
               height="100%"

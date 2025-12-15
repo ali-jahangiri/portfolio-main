@@ -8,12 +8,16 @@ const BlogSection = () => {
 
   return (
     <div>
-      <div id="blog" className="h-[90px]"></div>
-      <div className="md:h-(--entire-screen) w-full flex">
-        <div className="md:w-2/3 h-full flex flex-col">
-          <span className="text-5xl md:text-8xl md:mr-2">
+      <div id="blog" className="h-[60px] sm:h-[70px] md:h-[90px]"></div>
+      <div className="md:h-(--entire-screen) w-full flex flex-col md:flex-row px-4 sm:px-6 md:px-0">
+        <div className="w-full md:w-2/3 h-full flex flex-col">
+          <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl md:mr-2 leading-tight sm:leading-tight md:leading-normal">
             My thoughts turned into writing
-            <RedirectAction href="/blog" title="Read All" className="ml-5" />
+            <RedirectAction
+              href="/blog"
+              title="Read All"
+              className="ml-2 sm:ml-3 md:ml-5 text-sm sm:text-base md:text-lg"
+            />
           </span>
 
           <MobileBlogSlider posts={posts} />

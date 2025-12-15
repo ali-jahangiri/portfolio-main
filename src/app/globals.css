@@ -1,9 +1,19 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 body {
   --font-outfit: var(--font-outfit);
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 
 html {
@@ -11,17 +21,15 @@ html {
 }
 
 @theme {
-  --color-primary: #780CFF;
-  --color-secondary: #D9D9D9;
+  --color-primary: #780cff;
+  --color-secondary: #d9d9d9;
   --entire-screen: calc(100vh - 100px);
 }
-
 
 #circularEffect {
   z-index: 9;
   background: #ffe7;
 }
-
 
 .button {
   cursor: pointer;
@@ -37,6 +45,19 @@ html {
   place-content: center;
   transition: background 300ms, transform 200ms;
   font-weight: 600;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .button {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 14px;
+  }
 }
 
 .button__text {
@@ -44,7 +65,7 @@ html {
   inset: 0;
   animation: text-rotation 8s linear infinite;
 
-  >span {
+  > span {
     position: absolute;
     transform: rotate(calc(19deg * var(--index)));
     inset: 2px;
@@ -94,7 +115,6 @@ html {
     rotate: 360deg;
   }
 }
-
 
 .yarl__root {
   z-index: 1000000 !important;

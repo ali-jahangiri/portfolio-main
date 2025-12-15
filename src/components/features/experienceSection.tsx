@@ -3,27 +3,27 @@ import RedirectAction from './redirectAction';
 
 const ExperienceSection = () => {
   return (
-    <div className="mt-10">
-      <div id="experience" className="h-[90px]"></div>
-      <div className="min-h-(--entire-screen) w-full flex flex-col md:flex-row overflow-visible">
-        <div>
-          <p className="text-5xl md:text-8xl md:sticky top-24 left-0">
+    <div className="mt-6 sm:mt-8 md:mt-10">
+      <div id="experience" className="h-[60px] sm:h-[70px] md:h-[90px]"></div>
+      <div className="min-h-(--entire-screen) w-full flex flex-col md:flex-row overflow-visible px-4 sm:px-6 md:px-0">
+        <div className="md:self-start">
+          <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl md:sticky md:top-24 left-0 leading-tight sm:leading-tight md:leading-normal">
             Shaping Digital Experiences
             <RedirectAction
               href="https://www.linkedin.com/in/jahangiridev/details/experience/"
               title="Watch All"
-              className="ml-5"
+              className="ml-2 sm:ml-3 md:ml-5 text-sm sm:text-base md:text-lg"
             />
           </p>
         </div>
         <div className="w-full rounded-2xl bg-gray-100 mt-5 md:m-5">
-          <p className="text-2xl md:w-2/3 text-neutral-600 ml-auto p-10 text-justify italic">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl md:w-2/3 text-neutral-700 md:text-neutral-600 ml-auto p-6 sm:p-8 md:p-10 text-justify italic leading-relaxed sm:leading-relaxed">
             {"''"}As a front-end developer, I focus on creating seamless and accessible user experiences. I’ve
             contributed to complex projects, mentored developers, and helped teams deliver maintainable and performant
             code for long-term growth.{"''"}
           </p>
 
-          <div className="m-10">
+          <div className="m-4 sm:m-6 md:m-10">
             <ExperienceRecord
               title="Tamin"
               imgSrc="/compony/tamin.png"
@@ -78,21 +78,34 @@ const ExperienceRecord = ({
   secondImgSrc?: string;
   desc: string;
 }) => (
-  <div className="flex flex-col md:flex-row items-start mt-20 relative">
+  <div className="flex flex-col md:flex-row items-start mt-12 sm:mt-12 md:mt-20 relative">
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${secondImgSrc ? 'relative -top-10' : ''
-        }`}
+      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 md:size-22 ${
+        secondImgSrc ? 'relative -top-6 md:-top-10' : ''
+      }`}
     >
-      <Image width={50} height={50} src={imgSrc} alt="compony-logo" />
+      <Image
+        width={50}
+        height={50}
+        src={imgSrc}
+        alt="compony-logo"
+        className="w-8 h-8 sm:w-10 sm:h-10 md:w-[50px] md:h-[50px] object-contain"
+      />
     </div>
     {secondImgSrc && (
-      <div className="flex absolute top-5 left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22">
-        <Image width={100} height={100} src={secondImgSrc} alt="compony-logo" />
+      <div className="flex absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 md:size-22">
+        <Image
+          width={100}
+          height={100}
+          src={secondImgSrc}
+          alt="compony-logo"
+          className="w-12 h-12 sm:w-16 sm:h-16 md:w-[100px] md:h-[100px]"
+        />
       </div>
     )}
-    <div className="ml-1 mt-5 md:ml-9 md:mt-12">
-      <p className="text-2xl font-semibold mb-4">{title}</p>
-      <p className="text-neutral-700 text-justify">{desc}</p>
+    <div className="ml-0 sm:ml-1 mt-4 sm:mt-5 md:ml-9 md:mt-12">
+      <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3 md:mb-4">{title}</p>
+      <p className="text-sm sm:text-base md:text-lg text-neutral-700 text-justify leading-relaxed">{desc}</p>
     </div>
   </div>
 );
