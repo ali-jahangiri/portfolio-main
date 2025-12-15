@@ -3,7 +3,7 @@ import Image from 'next/image';
 const Footer = () => (
   <footer className="flex flex-wrap-reverse items-center justify-between rounded-xl p-3 px-7 bg-gray-100 w-4/5 mb-10 mx-auto">
     <div>
-      <a className="md:text-2xl text-xl" href="mailto:jahangiri.dev@gmail.com">
+      <a className="xl:text-2xl text-xl" href="mailto:jahangiri.dev@gmail.com">
         jahangiri.dev@gmail.com
       </a>
     </div>
@@ -18,7 +18,7 @@ const Footer = () => (
           height={60}
           src="/linkedin.png"
           alt="LinkedIn"
-          className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 md:mb-0 mb-5"
+          className="w-10 h-10 xl:w-14 xl:h-14 lg:w-16 lg:h-16 xl:mb-0 mb-5"
         />
       </a>
     </div>

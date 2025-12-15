@@ -55,7 +55,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h1 id={id} className="text-4xl md:text-5xl font-bold text-neutral-900 mt-12 mb-6 pb-3 scroll-mt-24">
+      <h1 id={id} className="text-4xl xl:text-5xl font-bold text-neutral-900 mt-12 mb-6 pb-3 scroll-mt-24">
         {children}
       </h1>
     );
@@ -64,7 +64,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h2 id={id} className="text-3xl md:text-4xl font-bold text-neutral-900 mt-10 mb-5 pb-2 scroll-mt-24">
+      <h2 id={id} className="text-3xl xl:text-4xl font-bold text-neutral-900 mt-10 mb-5 pb-2 scroll-mt-24">
         {children}
       </h2>
     );
@@ -73,7 +73,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h3 id={id} className="text-2xl md:text-3xl font-semibold text-neutral-800 mt-8 mb-4 scroll-mt-24">
+      <h3 id={id} className="text-2xl xl:text-3xl font-semibold text-neutral-800 mt-8 mb-4 scroll-mt-24">
         {children}
       </h3>
     );
@@ -82,7 +82,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h4 id={id} className="text-xl md:text-2xl font-semibold text-neutral-800 mt-6 mb-3 scroll-mt-24">
+      <h4 id={id} className="text-xl xl:text-2xl font-semibold text-neutral-800 mt-6 mb-3 scroll-mt-24">
         {children}
       </h4>
     );
@@ -91,7 +91,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h5 id={id} className="text-lg md:text-xl font-semibold text-neutral-700 mt-5 mb-2 scroll-mt-24">
+      <h5 id={id} className="text-lg xl:text-xl font-semibold text-neutral-700 mt-5 mb-2 scroll-mt-24">
         {children}
       </h5>
     );
@@ -100,7 +100,7 @@ const markdownComponents: Components = {
     const text = String(children);
     const id = generateHeadingId(text);
     return (
-      <h6 id={id} className="text-base md:text-lg font-semibold text-neutral-700 mt-4 mb-2 scroll-mt-24">
+      <h6 id={id} className="text-base xl:text-lg font-semibold text-neutral-700 mt-4 mb-2 scroll-mt-24">
         {children}
       </h6>
     );
@@ -115,7 +115,7 @@ const markdownComponents: Components = {
     return <li className="pl-2 leading-7 mb-2 text-base">{children}</li>;
   },
   p({ children }) {
-    return <p className="text-base md:text-lg leading-8 text-neutral-800 mb-5 font-normal">{children}</p>;
+    return <p className="text-base xl:text-lg leading-8 text-neutral-800 mb-5 font-normal">{children}</p>;
   },
   a({ href, children }) {
     return (

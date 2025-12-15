@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="ltr" lang="en">
-      <body className={`${outfit.className} antialiased`}>
+      <body
+        className={`${outfit.className} antialiased text-[15px] leading-[1.65] sm:text-base sm:leading-relaxed`}
+      >
         {children}
         <Navbar />
       </body>

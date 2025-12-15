@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Article Header */}
             <div className="mb-10">
               <Image className='mb-auto' src={post.thumbnail} width={200} height={200} alt="blog-thumb" />
-              <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 mb-6 leading-tight">{post.title}</h1>
+              <h1 className="text-5xl xl:text-6xl font-bold text-neutral-900 mb-6 leading-tight">{post.title}</h1>
               <div className="flex flex-wrap items-center gap-4 text-neutral-600 mb-6 text-base">
                 <time dateTime={post.date}>{formatDate(post.date)}</time>
                 <span>•</span>

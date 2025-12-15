@@ -9,11 +9,11 @@ interface Props {
 const RedirectAction = (props: Props) => (
   <Link
     href={props.href}
-    className={`group hover:border-b inline-flex items-center text-sm sm:text-base md:text-lg ${props.className || ''}`}
+    className={`group hover:border-b inline-flex items-center text-sm sm:text-base xl:text-lg ${props.className || ''}`}
   >
     {props.title}
     <svg
-      className="size-3 sm:size-3.5 md:size-4 ml-2 sm:ml-2.5 md:ml-3 transition duration-150 group-hover:-translate-y-1 group-hover:translate-x-1"
+      className="size-3 sm:size-3.5 xl:size-4 ml-2 sm:ml-2.5 xl:ml-3 transition duration-150 group-hover:-translate-y-1 group-hover:translate-x-1"
       xmlns="http://www.w3.org/2000/svg"
       id="Layer_1"
       data-name="Layer 1"

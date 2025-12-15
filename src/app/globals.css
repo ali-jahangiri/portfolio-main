@@ -4,16 +4,7 @@
 body {
   --font-outfit: var(--font-outfit);
   overflow-x: hidden;
-  font-size: 16px;
-  line-height: 1.6;
   color: #1a1a1a;
-}
-
-@media (max-width: 640px) {
-  body {
-    font-size: 15px;
-    line-height: 1.65;
-  }
 }
 
 html {
@@ -65,7 +56,7 @@ html {
   inset: 0;
   animation: text-rotation 8s linear infinite;
 
-  > span {
+  >span {
     position: absolute;
     transform: rotate(calc(19deg * var(--index)));
     inset: 2px;

@@ -63,21 +63,18 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-full fixed flex items-center justify-center top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${
-          isHomePage ? 'h-20' : 'h-14'
-        }`}
+        className={`w-full fixed flex items-center justify-center top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${isHomePage ? 'h-20' : 'h-14'
+          }`}
       >
         {/* Desktop Navbar */}
         <div
-          className={`hidden md:flex w-fit items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${
-            isHomePage ? 'p-3 mt-5 px-5' : 'p-2 mt-3 px-4'
-          }`}
+          className={`hidden xl:flex w-fit items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${isHomePage ? 'p-3 mt-5 px-5' : 'p-2 mt-3 px-4'
+            }`}
         >
           <Link href="/">
             <svg
-              className={`fill-neutral-200 transition-all duration-300 ease-in-out hover:fill-primary ${
-                isHomePage ? 'size-7' : 'size-5'
-              }`}
+              className={`fill-neutral-200 transition-all duration-300 ease-in-out hover:fill-primary ${isHomePage ? 'size-7' : 'size-5'
+                }`}
               xmlns="http://www.w3.org/2000/svg"
               id="Filled"
               viewBox="0 0 24 24"
@@ -90,15 +87,13 @@ const Navbar = () => {
           {ITEMS.map((item, i) => (
             <Link href={generateHrefForLink(item.path)} onClick={() => setCurrentPathHash(item.path)} key={i}>
               <span
-                className={`transition-all duration-300 ease-in-out hover:text-white ${
-                  isHomePage ? 'text-base' : 'text-sm'
-                } ${
-                  currentPathHash || currentPath.length > 1
+                className={`transition-all duration-300 ease-in-out hover:text-white ${isHomePage ? 'text-base' : 'text-sm'
+                  } ${currentPathHash || currentPath.length > 1
                     ? checkCurrentActiveLink(item.path)
                       ? 'text-white'
                       : 'text-neutral-400'
                     : 'text-neutral-100'
-                }`}
+                  }`}
               >
                 {item.title}
               </span>
@@ -109,7 +104,7 @@ const Navbar = () => {
         {/* Mobile Globe Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden fixed top-4 right-4 z-1000000 flex justify-center items-center w-12 h-12 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out`}
+          className={`xl:hidden fixed top-4 right-4 z-1000000 flex justify-center items-center w-12 h-12 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out`}
           aria-label="Toggle menu"
         >
           <GlobeIcon />
@@ -118,15 +113,13 @@ const Navbar = () => {
 
       {/* Mobile Full-Screen Menu */}
       <div
-        className={`fixed inset-0 z-999998 bg-[#000000ef] backdrop-blur-md transition-all duration-500 ease-in-out md:hidden ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed inset-0 z-999998 bg-[#000000ef] backdrop-blur-xl:transition-all duration-500 ease-in-out xl:hidden ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={`flex flex-col items-center justify-center h-full w-full gap-8 transition-all duration-500 ease-in-out ${
-            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
-          }`}
+          className={`flex flex-col items-center justify-center h-full w-full gap-8 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
+            }`}
           onClick={(e) => e.stopPropagation()}
         >
           {ITEMS.map((item, i) => (
@@ -137,13 +130,12 @@ const Navbar = () => {
               className="transition-transform duration-300 hover:scale-110"
             >
               <span
-                className={`text-3xl font-medium transition-all duration-300 ease-in-out ${
-                  currentPathHash || currentPath.length > 1
+                className={`text-3xl font-medium transition-all duration-300 ease-in-out ${currentPathHash || currentPath.length > 1
                     ? checkCurrentActiveLink(item.path)
                       ? 'text-white'
                       : 'text-neutral-400'
                     : 'text-neutral-100'
-                }`}
+                  }`}
               >
                 {item.title}
               </span>

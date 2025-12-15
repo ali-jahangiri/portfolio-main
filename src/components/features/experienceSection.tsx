@@ -3,27 +3,27 @@ import RedirectAction from './redirectAction';
 
 const ExperienceSection = () => {
   return (
-    <div className="mt-6 sm:mt-8 md:mt-10">
-      <div id="experience" className="h-[60px] sm:h-[70px] md:h-[90px]"></div>
-      <div className="min-h-(--entire-screen) w-full flex flex-col md:flex-row overflow-visible px-4 sm:px-6 md:px-0">
-        <div className="md:self-start">
-          <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl md:sticky md:top-24 left-0 leading-tight sm:leading-tight md:leading-normal">
+    <div className="mt-6 sm:mt-8 xl:mt-10">
+      <div id="experience" className="h-[60px] sm:h-[70px] xl:h-[90px]"></div>
+      <div className="w-full flex flex-col xl:flex-row px-4 sm:px-6 xl:px-0">
+        <div className="">
+          <p className="text-2xl sm:text-3xl lg:text-6xl xl:text-8xl leading-tight sm:leading-tight xl:leading-normal">
             Shaping Digital Experiences
             <RedirectAction
               href="https://www.linkedin.com/in/jahangiridev/details/experience/"
               title="Watch All"
-              className="ml-2 sm:ml-3 md:ml-5 text-sm sm:text-base md:text-lg"
+              className="ml-2 sm:ml-3 xl:ml-5 text-sm sm:text-base xl:text-lg"
             />
           </p>
         </div>
-        <div className="w-full rounded-2xl bg-gray-100 mt-5 md:m-5">
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl md:w-2/3 text-neutral-700 md:text-neutral-600 ml-auto p-6 sm:p-8 md:p-10 text-justify italic leading-relaxed sm:leading-relaxed">
+        <div className="w-full rounded-2xl bg-gray-100 mt-5 xl:m-5">
+          <p className="text-base sm:text-lg xl:text-xl lg:text-2xl xl:w-2/3 text-neutral-700 xl:text-neutral-600 ml-auto p-6 sm:p-8 xl:p-10 text-justify italic leading-relaxed sm:leading-relaxed">
             {"''"}As a front-end developer, I focus on creating seamless and accessible user experiences. I’ve
             contributed to complex projects, mentored developers, and helped teams deliver maintainable and performant
             code for long-term growth.{"''"}
           </p>
 
-          <div className="m-4 sm:m-6 md:m-10">
+          <div className="m-4 sm:m-6 xl:m-10">
             <ExperienceRecord
               title="Tamin"
               imgSrc="/compony/tamin.png"
@@ -78,34 +78,33 @@ const ExperienceRecord = ({
   secondImgSrc?: string;
   desc: string;
 }) => (
-  <div className="flex flex-col md:flex-row items-start mt-12 sm:mt-12 md:mt-20 relative">
+  <div className="flex flex-col xl:flex-row items-start mt-12 sm:mt-12 xl:mt-20 relative">
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 md:size-22 ${
-        secondImgSrc ? 'relative -top-6 md:-top-10' : ''
-      }`}
+      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 xl:size-22 ${secondImgSrc ? 'relative -top-6 xl:-top-10' : ''
+        }`}
     >
       <Image
         width={50}
         height={50}
         src={imgSrc}
         alt="compony-logo"
-        className="w-8 h-8 sm:w-10 sm:h-10 md:w-[50px] md:h-[50px] object-contain"
+        className="w-8 h-8 sm:w-10 sm:h-10 xl:w-[50px] xl:h-[50px] object-contain"
       />
     </div>
     {secondImgSrc && (
-      <div className="flex absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 md:size-22">
+      <div className="flex absolute top-2 left-2 sm:top-3 sm:left-3 xl:top-5 xl:left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 xl:size-22">
         <Image
           width={100}
           height={100}
           src={secondImgSrc}
           alt="compony-logo"
-          className="w-12 h-12 sm:w-16 sm:h-16 md:w-[100px] md:h-[100px]"
+          className="w-12 h-12 sm:w-16 sm:h-16"
         />
       </div>
     )}
-    <div className="ml-0 sm:ml-1 mt-4 sm:mt-5 md:ml-9 md:mt-12">
-      <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3 md:mb-4">{title}</p>
-      <p className="text-sm sm:text-base md:text-lg text-neutral-700 text-justify leading-relaxed">{desc}</p>
+    <div className="ml-0 sm:ml-1 mt-4 sm:mt-5 xl:ml-9 xl:mt-12">
+      <p className="text-lg sm:text-xl xl:text-2xl font-semibold mb-2 sm:mb-3 xl:mb-4">{title}</p>
+      <p className="text-sm sm:text-base xl:text-lg text-neutral-700 text-justify leading-relaxed">{desc}</p>
     </div>
   </div>
 );
