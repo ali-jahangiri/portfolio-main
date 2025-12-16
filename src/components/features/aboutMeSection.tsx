@@ -21,7 +21,7 @@ const AboutMeSection = () => {
               adapt to all kinds of challenges, whether it’s heat, cold, or anything in between.`}
             </p>
           </div>
-          <div className="w-full sm:w-[90%] xl:w-2/5 flex items-center justify-center xl:p-4 sm:p-6 mt-5 rounded-2xl bg-gray-100 xl:mr-5 mx-auto h-full">
+          <div className="w-full sm:w-[90%] xl:w-2/5 flex items-center justify-center rounded-2xl mt-4 sm:mt-3 xl:mt-2 bg-gray-100 xl:mr-5 mx-auto h-full">
             <PureSlider
               speed={700}
               height="100%"
@@ -36,7 +36,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto shadow-2xl"
                 />,
                 <Image
                   key="5"
@@ -44,7 +44,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="7"
@@ -52,7 +52,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto -rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto -rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="2"
@@ -60,7 +60,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="3"
@@ -68,7 +68,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto -rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto -rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="1"
@@ -76,7 +76,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="4"
@@ -84,7 +84,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto -rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto -rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="8"
@@ -92,7 +92,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="9"
@@ -100,7 +100,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto -rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto -rotate-10 shadow-2xl"
                 />,
                 <Image
                   key="10"
@@ -108,7 +108,7 @@ const AboutMeSection = () => {
                   alt="about-me"
                   width={450}
                   height={450}
-                  className="m-auto w-52 my-10 xl:w-100 xl:my-auto rotate-10 shadow-2xl"
+                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
                 />,
               ]}
             />

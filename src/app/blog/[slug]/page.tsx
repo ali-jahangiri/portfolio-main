@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Back Button */}
         <Link
           href="/blog"
-          className="inline-flex sticky top-16 xl:top-20 left-2 xl:left-4 z-10 items-center gap-1.5 xl:gap-2 text-sm xl:text-base text-neutral-600 hover:text-neutral-800 transition-colors mb-4 xl:mb-0"
+          className="xl:inline-flex hidden sticky top-16 xl:top-20 left-2 xl:left-4 z-10 items-center gap-1.5 xl:gap-2 text-sm xl:text-base text-neutral-600 hover:text-neutral-800 transition-colors mb-4 xl:mb-0"
         >
           <svg
             className="size-4 xl:size-5"
@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mb-6 xl:mb-10">
               <div className="mb-4 xl:mb-6">
                 <Image
-                  className="w-full h-auto rounded-lg"
+                  className="size-28 rounded-lg"
                   src={post.thumbnail}
                   width={800}
                   height={400}
@@ -97,7 +97,9 @@ export default async function BlogPostPage({ params }: Props) {
                   priority
                 />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 xl:mb-6 leading-tight">{post.title}</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 xl:mb-6 leading-tight">
+                {post.title}
+              </h1>
               <div className="flex flex-wrap items-center gap-2 xl:gap-4 text-sm xl:text-base text-neutral-600 mb-4 xl:mb-6">
                 <time dateTime={post.date}>{formatDate(post.date)}</time>
                 <span className="hidden sm:inline">•</span>
@@ -124,11 +126,11 @@ export default async function BlogPostPage({ params }: Props) {
             <MarkdownParser content={post.content} />
           </article>
 
-          {!!headings.length && (
+          {/* {!!headings.length && (
             <div className="hidden xl:block">
               <TableOfContentsWrapper headings={headings} />
             </div>
-          )}
+          )} */}
         </div>
         <Footer />
       </Container>

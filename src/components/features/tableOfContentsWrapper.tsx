@@ -36,11 +36,11 @@ export default function TableOfContentsWrapper({ headings }: TableOfContentsWrap
 
   return (
     <aside
-      className={`sticky top-24  transition-all -ml-12 duration-300 ease-in-out ${
-        isCollapsed ? 'w-12 right-120' : 'w-64 right-72'
+      className={`sticky top-24 transition-all -ml-12 duration-300 ease-in-out ${
+        isCollapsed ? 'w-12 right-0' : 'w-64 right-0'
       }`}
     >
-      <div className="sticky top-24">
+      <div className="">
         <TableOfContents headings={headings} isCollapsed={isCollapsed} onToggleCollapse={handleToggleCollapse} />
       </div>
     </aside>
