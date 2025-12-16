@@ -6,7 +6,7 @@ interface Props {
 
 const PageContentContainer = ({ children }: Props) => {
   return (
-    <main id="pageContentContainer" className="mt-30">
+    <main id="pageContentContainer" className="xl:mt-30">
       {children}
     </main>
   );

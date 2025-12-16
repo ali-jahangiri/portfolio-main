@@ -18,7 +18,7 @@ const Footer = () => (
           height={60}
           src="/linkedin.png"
           alt="LinkedIn"
-          className="w-10 h-10 xl:w-14 xl:h-14 lg:w-16 lg:h-16 xl:mb-0 mb-5"
+          className="w-10 h-10 xl:w-14 xl:h-14 lg:w-16 lg:h-16 mb-5 sm:mb-0"
         />
       </a>
     </div>
