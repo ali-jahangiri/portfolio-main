@@ -3,11 +3,11 @@ import RedirectAction from './redirectAction';
 
 const ExperienceSection = () => {
   return (
-    <div className="mt-6 sm:mt-8 xl:mt-10">
-      <div id="experience" className="h-[60px] sm:h-[70px] xl:h-[90px]"></div>
-      <div className="w-full flex flex-col xl:flex-row px-4 sm:px-6 xl:px-0">
-        <div className="">
-          <p className="text-2xl sm:text-3xl lg:text-6xl xl:text-8xl leading-tight sm:leading-tight xl:leading-normal">
+    <div className="mt-10">
+      <div id="experience" className="h-[90px]"></div>
+      <div className="min-h-(--entire-screen) w-full flex flex-col xl:flex-row px-4 sm:px-6 xl:px-0">
+        <div>
+          <p className="sticky top-24 left-0 text-2xl sm:text-3xl lg:text-6xl xl:text-8xl leading-tight sm:leading-tight xl:leading-normal">
             Shaping Digital Experiences
             <RedirectAction
               href="https://www.linkedin.com/in/jahangiridev/details/experience/"
@@ -78,33 +78,21 @@ const ExperienceRecord = ({
   secondImgSrc?: string;
   desc: string;
 }) => (
-  <div className="flex flex-col xl:flex-row items-start mt-12 sm:mt-12 xl:mt-20 relative">
+  <div className="flex items-start mt-20 relative">
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 xl:size-22 ${secondImgSrc ? 'relative -top-6 xl:-top-10' : ''
+      className={`flex shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22 ${secondImgSrc ? 'relative -top-10' : ''
         }`}
     >
-      <Image
-        width={50}
-        height={50}
-        src={imgSrc}
-        alt="compony-logo"
-        className="w-8 h-8 sm:w-10 sm:h-10 xl:w-[50px] xl:h-[50px] object-contain"
-      />
+      <Image width={50} height={50} src={imgSrc} alt="compony-logo" />
     </div>
     {secondImgSrc && (
-      <div className="flex absolute top-2 left-2 sm:top-3 sm:left-3 xl:top-5 xl:left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-16 sm:size-20 xl:size-22">
-        <Image
-          width={100}
-          height={100}
-          src={secondImgSrc}
-          alt="compony-logo"
-          className="w-12 h-12 sm:w-16 sm:h-16"
-        />
+      <div className="flex absolute top-5 left-5 shrink-0 items-center justify-center rounded-xl bg-white shadow-2xl p-2 size-22">
+        <Image width={100} height={100} src={secondImgSrc} alt="compony-logo" />
       </div>
     )}
-    <div className="ml-0 sm:ml-1 mt-4 sm:mt-5 xl:ml-9 xl:mt-12">
-      <p className="text-lg sm:text-xl xl:text-2xl font-semibold mb-2 sm:mb-3 xl:mb-4">{title}</p>
-      <p className="text-sm sm:text-base xl:text-lg text-neutral-700 text-justify leading-relaxed">{desc}</p>
+    <div className="ml-9 mt-12">
+      <p className="text-2xl font-semibold mb-4">{title}</p>
+      <p className="text-neutral-700">{desc}</p>
     </div>
   </div>
 );

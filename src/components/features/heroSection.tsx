@@ -4,9 +4,8 @@ import HoverBox from './hoverBox';
 const HeroSection = () => (
   <div
     id="hero"
-    className="w-full h-screen xl:h-auto flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent"
+    className="w-full h-screen xl:h-auto min-h-screen flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent"
   >
-    <Image src="/animated-glob.gif" width={400} height={400} alt="hero-icon" />
     <h2 className="xl:text-3xl text-gray-500 xl:w-2/5 my-10">
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>

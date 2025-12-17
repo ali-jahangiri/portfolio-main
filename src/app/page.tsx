@@ -6,7 +6,7 @@ import HeroSection from '@/components/features/heroSection';
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       <HeroSection />
       <BlogSection />
       <ExperienceSection />

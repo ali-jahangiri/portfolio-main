@@ -17,10 +17,6 @@ html {
   --entire-screen: calc(100vh - 100px);
 }
 
-#circularEffect {
-  z-index: 9;
-  background: #ffe7;
-}
 
 .button {
   cursor: pointer;

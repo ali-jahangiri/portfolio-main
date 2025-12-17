@@ -5,6 +5,7 @@ import createMDX from '@next/mdx'
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  poweredByHeader: false,
 };
 
 
