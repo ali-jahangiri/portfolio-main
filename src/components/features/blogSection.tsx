@@ -38,7 +38,7 @@ const BlogSection = () => {
           </div>
         </div>
         <div className="xl:flex xl:w-1/3 hidden h-full pr-5">
-          {posts.slice(-1).map((post, i) => (
+          {/* {posts.slice(-1).map((post, i) => (
             <BlogCard
               title={post.title}
               date={post.date}
@@ -49,7 +49,7 @@ const BlogSection = () => {
               className="h-full mt-auto"
               key={i}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

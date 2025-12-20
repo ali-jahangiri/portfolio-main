@@ -102,14 +102,6 @@ const AboutMeSection = () => {
                   height={450}
                   className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto -rotate-10 shadow-2xl"
                 />,
-                <Image
-                  key="10"
-                  src="/images/about-me-pics/Frame 98.png"
-                  alt="about-me"
-                  width={450}
-                  height={450}
-                  className="m-auto w-52 my-10 xl:w-2/4 xl:my-auto rotate-10 shadow-2xl"
-                />,
               ]}
             />
           </div>
