@@ -103,6 +103,16 @@ html {
   }
 }
 
+@keyframes circle-float {
+  from {
+    transform: translate(-50%, 80vh) scale(.8);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 .yarl__root {
   z-index: 1000000 !important;
 }

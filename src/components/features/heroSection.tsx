@@ -6,13 +6,16 @@ const HeroSection = () => (
     id="hero"
     className="w-full h-screen xl:h-auto min-h-screen flex flex-col justify-end items-start p-3 relative bg-linear-to-b from-[#FCFCFC] to-transparent"
   >
-    <div className="w-1/2 absolute top-50 right-0 h-80 bg-neutral-300 rounded-tl-full rounded-bl-full"></div>
     <h2 className="xl:text-3xl text-gray-500 xl:w-2/5 my-10">
       Engineer obsessed with well-structured code, fast interfaces, and shipping reliable front-end systems.
     </h2>
     <div
-      className="absolute left-1/2 w-[800px] h-[900px] rounded-full bg-primary opacity-30 blur-3xl pointer-events-none"
-      style={{ top: 0, transform: 'translate(-50%, -50%)' }}
+      className="absolute left-1/2 w-[80vw] h-[150vh] rounded-full bg-primary opacity-30 pointer-events-none"
+      style={{
+        top: 0,
+        filter: 'blur(120px)',
+        animation: 'circle-float 1s ease-out forwards',
+      }}
     />
     <div className="text-7xl font-bold xl:hidden block">
       <h1>Ali</h1>

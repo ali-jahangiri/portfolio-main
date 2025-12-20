@@ -34,8 +34,6 @@ const Navbar = () => {
   const shuffledImagesRef = useRef<string[]>([]);
   const currentIndexRef = useRef(0);
 
-  console.log(currentImageNumber);
-
   const isHomePage = currentPath === '/';
 
   // Shuffle function using Fisher-Yates algorithm
@@ -107,15 +105,13 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-full fixed flex items-center justify-center top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${
-          isHomePage ? 'h-20' : 'h-14'
-        }`}
+        className={`w-full fixed flex items-center justify-center top-0 left-0 z-999999 transition-all duration-300 ease-in-out ${isHomePage ? 'h-20' : 'h-14'
+          }`}
       >
         {/* Desktop Navbar */}
         <div
-          className={`hidden xl:flex mt-8 w-fit items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${
-            isHomePage ? 'p-3 px-5' : 'p-2 px-4'
-          }`}
+          className={`hidden xl:flex mt-8 w-fit items-center gap-x-6 bg-[#000000bf] backdrop-blur-xs rounded-full transition-all duration-300 ease-in-out ${isHomePage ? 'p-3 px-5' : 'p-2 px-4'
+            }`}
         >
           <Link href="/" className="flex items-center mr-6 justify-center size-12 group">
             <Image
@@ -130,15 +126,13 @@ const Navbar = () => {
           {ITEMS.map((item, i) => (
             <Link href={generateHrefForLink(item.path)} onClick={() => setCurrentPathHash(item.path)} key={i}>
               <span
-                className={`transition-all duration-300 ease-in-out hover:text-white ${
-                  isHomePage ? 'text-base' : 'text-sm'
-                } ${
-                  currentPathHash || currentPath.length > 1
+                className={`transition-all duration-300 ease-in-out hover:text-white ${isHomePage ? 'text-base' : 'text-sm'
+                  } ${currentPathHash || currentPath.length > 1
                     ? checkCurrentActiveLink(item.path)
                       ? 'text-white'
                       : 'text-neutral-400'
                     : 'text-neutral-100'
-                }`}
+                  }`}
               >
                 {item.title}
               </span>
@@ -165,15 +159,13 @@ const Navbar = () => {
 
       {/* Mobile Full-Screen Menu */}
       <div
-        className={`fixed inset-0 z-999998 bg-[#000000ef] backdrop-blur-xl:transition-all duration-500 ease-in-out xl:hidden ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed inset-0 z-999998 bg-[#000000ef] backdrop-blur-xl:transition-all duration-500 ease-in-out xl:hidden ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={`flex flex-col items-center justify-center h-full w-full gap-8 transition-all duration-500 ease-in-out ${
-            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
-          }`}
+          className={`flex flex-col items-center justify-center h-full w-full gap-8 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
+            }`}
           onClick={(e) => e.stopPropagation()}
         >
           {ITEMS.map((item, i) => (
@@ -184,13 +176,12 @@ const Navbar = () => {
               className="transition-transform duration-300 hover:scale-110"
             >
               <span
-                className={`text-3xl font-medium transition-all duration-300 ease-in-out ${
-                  currentPathHash || currentPath.length > 1
+                className={`text-3xl font-medium transition-all duration-300 ease-in-out ${currentPathHash || currentPath.length > 1
                     ? checkCurrentActiveLink(item.path)
                       ? 'text-white'
                       : 'text-neutral-400'
                     : 'text-neutral-100'
-                }`}
+                  }`}
               >
                 {item.title}
               </span>
