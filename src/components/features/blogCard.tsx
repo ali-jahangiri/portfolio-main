@@ -28,7 +28,7 @@ const BlogCard = (props: Props) => (
 
     <div className="flex flex-wrap gap-2 items-center gap-x-3 mb-2 sm:mb-5">
       <p className="text-xs sm:text-sm ml-2 xl:text-base text-neutral-500 xl:text-neutral-400">{props.date}</p>
-      <div className="xl:shrink-0 flex-wrap gap-2 flex items-center xl:justify-center">
+      <div className="xl:shrink-0 max-w-full flex-wrap gap-2 flex items-center xl:justify-start">
         {props.categories.map((category, i) => (
           <Badge title={category} key={i} />
         ))}

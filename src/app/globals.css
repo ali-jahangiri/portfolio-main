@@ -17,7 +17,6 @@ html {
   --entire-screen: calc(100vh - 100px);
 }
 
-
 .button {
   cursor: pointer;
   border: none;
@@ -52,7 +51,7 @@ html {
   inset: 0;
   animation: text-rotation 8s linear infinite;
 
-  >span {
+  > span {
     position: absolute;
     transform: rotate(calc(19deg * var(--index)));
     inset: 2px;
@@ -105,7 +104,7 @@ html {
 
 @keyframes circle-float {
   from {
-    transform: translate(-50%, 80vh) scale(.8);
+    transform: translate(-50%, 80vh) scale(0.1);
   }
 
   to {
