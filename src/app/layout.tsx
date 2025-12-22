@@ -3,6 +3,8 @@ import './globals.css';
 
 import { Outfit } from 'next/font/google';
 import Navbar from '../components/features/navbar';
+import Script from 'next/script';
+import GAClient from '@/components/ui/GAClient';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -22,11 +24,24 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="ltr" lang="en">
-      <body
-        className={`${outfit.className} antialiased text-[15px] leading-[1.65] sm:text-base sm:leading-relaxed`}
-      >
+      <head>
+        {/* Google Analytics global site tag */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-NC517NT9NS" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NC517NT9NS', {
+              page_path: window.location.pathname
+            });
+          `}
+        </Script>
+      </head>
+      <body className={`${outfit.className} antialiased text-[15px] leading-[1.65] sm:text-base sm:leading-relaxed`}>
         {children}
         <Navbar />
+        <GAClient /> {/* Optional: SPA pageview tracking */}
       </body>
     </html>
   );
