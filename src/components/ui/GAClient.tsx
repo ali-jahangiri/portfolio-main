@@ -6,7 +6,7 @@ export default function GAClient() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof window.gtag === 'function') {
+    if ('gtag' in window && typeof window.gtag === 'function') {
       window.gtag('config', 'G-NC517NT9NS', {
         page_path: pathname,
       });
